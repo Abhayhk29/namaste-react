@@ -2,9 +2,10 @@
   "name": "react-namaste",
   "version": "1.0.0",
   "description": "First react app by npm react",
-  "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start" : "parcel index.html",
+    "build" : "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -14,13 +15,21 @@
     "react",
     "practice"
   ],
-  "author": "abhay_pandey@persistent.com",
+  "author": "test@test.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/abhaypersistent/namaste-react/issues"
   },
   "homepage": "https://github.com/abhaypersistent/namaste-react#readme",
   "devDependencies": {
-    "parcel": "^2.10.0"
-  }
+    "parcel": "^2.10.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
 }
