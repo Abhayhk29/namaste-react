@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -46,4 +47,26 @@
 .res-container{
     display: flex;
     gap: 10px;
+}
+
+.shimmer-container{
+    display: flex;
+    gap: 2px;
+    flex-wrap: wrap;
+}
+
+.shimmer-card{
+    margin: 20px;
+    width: 200px;
+    height: 400px;
+    background-color: #f0f0f0;
+}
+
+.login{
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.filter{
+    display: flex;
 }
