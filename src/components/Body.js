@@ -3,6 +3,8 @@ import data from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+
 
 const Body = () => {
     const [listOfRest, setListOfRest] = useState([])
@@ -24,6 +26,10 @@ const Body = () => {
         setListOfFiltRest(result?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         // console.log(result.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
     }
+
+    const onLineStatus = useOnlineStatus();
+
+    if(!onLineStatus) return <h2>Seems THat you are offline please check your internet</h2>
 
     // conditional rendering
     return listOfRest.length === 0 ? <Shimmer /> : (
