@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy , Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Body from './components/Body';
@@ -9,6 +9,9 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Error from './components/Error';
 import RestMenu from './components/RestMenu';
+// import Grocery from './components/Grocery';
+
+const Grocery = lazy(() => import('./components/Grocery'))
 const AppLayout = () => {
     return(
         <div className='app'>
@@ -40,6 +43,10 @@ const appRouter = createBrowserRouter([
             {
                 path:"/restaurant/:resId",
                 element: <RestMenu />
+            },
+            {
+                path:"/grocery",
+                element: <Suspense fallback={<h1>Fallback loading.............</h1>}><Grocery /></Suspense>
             }
         ],
         errorElement: <Error />
@@ -51,3 +58,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
 root.render(<RouterProvider router={appRouter} />);
+
+// chunking
+// code Splitting
+// Dynamic bundling
+// Lazy Loading
+// On demand Load
+// Dynamic Import
