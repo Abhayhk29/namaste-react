@@ -16,7 +16,7 @@ const ResCategory = ({data, showItem, setShowIndex}) => {
                 <span className='font-bold text-lg'>{data.title} ({data.itemCards.length})</span>
                 <span>⬇</span>
             </div>
-            { showItem &&  <ItemList items={data.itemCards} />}
+            { showItem &&  <ItemList items={data.itemCards} key="sasasasas" />}
         </div>
     </div>
   )

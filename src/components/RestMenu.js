@@ -49,7 +49,9 @@ const RestMenu = () => {
                 data ={res?.card?.card} 
                 key={res?.card?.card.title} 
                 showItem = {index === showIndex ? true : false}
-                setShowIndex = {() => setShowIndex(index)}
+                setShowIndex = {() => setShowIndex((prev) => (
+                    index == prev ? null : index
+                ))}
             />
         ))}
     </div>

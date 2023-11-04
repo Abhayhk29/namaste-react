@@ -1,9 +1,10 @@
 import RestaurantCard, { withPromLavel } from "./RestaurantCard";
 import data from "../utils/mockData";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 
 const Body = () => {
@@ -11,7 +12,8 @@ const Body = () => {
     const [listOfFiltRest, setListOfFiltRest] = useState([])
     const [searchText, setSearchText] = useState('')
     // state variable
-
+    const { loggedInUser ,setUserInfo} = useContext(UserContext); 
+    
     const RestarurantCardPromoted = withPromLavel(RestaurantCard);
 
     // whwenever the state variable updates , react riggers a rencoilations cycle (rerender the component)
@@ -54,6 +56,10 @@ const Body = () => {
                         const filteredList = listOfRest.filter((res) => res.avgRating > 4)
                         setListOfRest(filteredList);
                     }}>Top Rated Restarurant</button>
+                </div>
+                <div className="search m-4 p-4 flex items-center">
+                    <label>UserName : </label>
+                    <input className="border border-black p-2" value={loggedInUser} onChange={(e) => setUserInfo(e.target.value)}/>
                 </div>
             </div>
             {/* <div className='search'>Search</div> */}
