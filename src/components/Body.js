@@ -40,7 +40,7 @@ const Body = () => {
         <div className='body'>
             <div className="flex">
                 <div className="search m-4 p-4">
-                    <input type="text" className="border border-solid border-black" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
+                    <input type="text" className="border border-solid border-black" data-testid="searchInput" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
                     <button className="px-4 py-2 bg-gray-100 m-4 rounded-lg" onClick={() => {
                         // update the rest card and update the UI
                         // note search text
@@ -69,7 +69,8 @@ const Body = () => {
                     <Link to={"/restaurant/" + item.info.id} key={item.info.id}>
                         {/* if the rest is promoted we will take another id for that */}
                         
-                        { item.info.locality === "Balewadi High Street" ? <RestaurantCard data={item.info} /> : <RestarurantCardPromoted data={item.info} /> }
+                        {/* { item.info.locality === "Balewadi High Street" ? <RestaurantCard data={item.info} /> : <RestarurantCardPromoted data={item.info} /> } */}
+                        { item.info.locality === "Marunji Road" ? <RestaurantCard data={item.info} /> : <RestarurantCardPromoted data={item.info} /> }
                         
                     </Link>
                 ))}

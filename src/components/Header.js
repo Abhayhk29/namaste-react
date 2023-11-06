@@ -6,7 +6,7 @@ import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-    const [btnName, setBtnName] = useState('login');
+    const [btnName, setBtnName] = useState('Login');
 
     // if no depedency array => useEffect is calledd on every render
     // if dependency array is empty => useEffect will call be called once or initial render
@@ -20,7 +20,7 @@ const Header = () => {
     const cartItems = useSelector((store) => store.cart.items);   
 
     useEffect(() => {
-        console.log("useEffect called")
+        // console.log("useEffect called")
     },[btnName])
     return (
     <div className='flex justify-between m-2'>
